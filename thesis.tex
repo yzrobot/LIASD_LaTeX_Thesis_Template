@@ -1,0 +1,125 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LIASD LaTeX Thesis Template
+% Copyright (C) 2011 Zhi Yan <yz@ai.univ-paris8.fr>
+%
+% This program is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,12pt]{book} % [options]: twoside, oneside
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%   PREAMBLE: PACKAGE   %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Franch support %%%
+\usepackage[english,francais]{babel} % Multilingual support for Plain TeX or LaTeX.
+\usepackage[utf8]{inputenc} % Accept different input encodings.
+\usepackage[T1]{fontenc} % Standard package for selecting font encodings.
+
+\usepackage{graphics} % Standard LaTeX graphics.
+\usepackage{epsfig} % Include Encapsulated PostScript in LaTeX documents.
+
+%%% Optional font %%%
+\usepackage{mathptmx} % Use Times as default text font, and provide maths support.
+\usepackage{times} % Select Adobe Times Roman (or equivalent) as default font.
+
+%%% Mathematics support %%%
+\usepackage{amsmath} % AMS mathematical facilities for LaTeX.
+\usepackage{amssymb} % AMS mathematical symbols for LaTeX.
+
+%%% Algorithm support %%%
+\usepackage{algorithm} % Environment for typesetting algorithms.
+\usepackage{algorithmic} % Environment for typesetting algorithms.
+\renewcommand{\listalgorithmname}{Liste des algorithmes} % Rename in french.
+\floatname{algorithm}{Algorithme} % Rename in french.
+\numberwithin{algorithm}{chapter} % Set the numbering of all algorithms to the chapter level.
+
+%%% Optional headers and footers style %%%
+%\usepackage{fancyhdr} % Extensive control of page headers and footers in LaTeX2e.
+%\pagestyle{fancy}
+
+%%% Index support %%%
+\usepackage{makeidx} % Standard LaTeX package for creating indexes.
+\makeindex
+
+%%% Hyperlink support %%%
+\usepackage[pagebackref]{hyperref} % Extensive support for hypertext in LaTeX.
+%[options]: colorlinks: color links.
+%[options]: pagebackref: backreference by page number.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%   PREAMBLE: PDFINFO   %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{
+  pdftitle={Planification multi-robot coordonnée},
+  pdfsubject={thèse de doctorat},
+  pdfauthor={Zhi YAN},
+  pdfkeywords={}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%    TEXT     %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%% front matter %%%%%%%%%%%%%%%%%%%
+\frontmatter
+
+\include{titlepage}
+\thispagestyle{empty}
+
+% dedication page is optional.
+\include{dedication}
+\thispagestyle{empty}
+
+\include{acknowledgments}
+\thispagestyle{empty}
+
+\include{resume}
+\thispagestyle{empty}
+
+\tableofcontents % Produce the table of contents.
+\listoffigures % Produce the list of figures.
+\listoftables % Produce the list of tables.
+\listofalgorithms % Produce the list of algorithms.
+
+%%%%%%%%%%%%%%%%%%%% main matter %%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{chapter5}
+
+\appendix
+\include{appendix1}
+\include{appendix2}
+
+%%%%%%%%%%%%%%%%%%%% back matter %%%%%%%%%%%%%%%%%%%%
+\backmatter
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliographie}
+\bibliographystyle{plain}
+\bibliography{bibliography}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+\include{abstract}
+
+\end{document}
